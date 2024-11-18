@@ -4,17 +4,27 @@ console.log(taskArray);
 
 const displayTask = () => {
     tableBody.innerHTML = ''
-    taskArray.forEach((task, index) => {
-        let completedClass = task.completed ? 'text-decoration-line-through text-secondary' : ''
-        let completedClassCheck = task.completed ? 'text-secondary' : 'text-success'
-        tableBody.innerHTML += `
-                                <tr>
-                                    <td id="task${index}" class="${completedClass}">${task.text}</td>
-                                    <td ><button onclick="handleCheck(${index})" class="btn  rounded-circle ${completedClassCheck}">${task.completed ? `<i class="fa-solid fa-close"></i>`:`<i class="fa-solid fa-check"></i>`}</button></td>
-                                    <td ><button onclick="handleDelete(${index})" class="btn text-danger rounded-circle"><i class="fa-solid fa-trash"></i></button></i></td>
-                                </tr>
-        `
-    })
+    if(taskArray.length>0)
+    {
+        taskArray.forEach((task, index) => {
+            let completedClass = task.completed ? 'text-decoration-line-through text-secondary' : ''
+            let completedClassCheck = task.completed ? 'text-secondary' : 'text-success'
+            tableBody.innerHTML += `
+                                    <tr>
+                                        <td id="task${index}" class="${completedClass}">${task.text}</td>
+                                        <td ><button onclick="handleCheck(${index})" class="btn  rounded-circle ${completedClassCheck}">${task.completed ? `<i class="fa-solid fa-close"></i>`:`<i class="fa-solid fa-check"></i>`}</button></td>
+                                        <td ><button onclick="handleDelete(${index})" class="btn text-danger rounded-circle"><i class="fa-solid fa-trash"></i></button></i></td>
+                                    </tr>
+            `
+        })
+    }
+    else
+    {
+        tableBody.innerHTML = `<tr>
+                                    <td class="colspan-3 text-center text-secondary fw-bold">No task added yet!!!</td>
+                                </tr>`
+    }
+    
 }
 
 

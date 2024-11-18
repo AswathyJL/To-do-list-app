@@ -13,20 +13,22 @@
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center text-info">To Do List App</h1>
+    <div class=" mt-5">
+        <h1 class="text-center text-info ">To Do List App</h1>
 
-        <div class="d-flex justify-content-center mt-5">
-            <input id="inputId" type="text" class="form-control w-50 me-3 border border-info border-opacity-75 border-3" placeholder="Enter your task here">
-            <button onclick="addTask()" class="btn btn-info">Add Task</button>
-            <button onclick="allClear()" class="btn btn-warning ms-3">All Clear</button>
+        <div class="w-100 mt-5 d-flex justify-content-center">
+            <div class="d-flex justify-content-center w-50">
+                <input id="inputId" type="text" class="form-control w-50 me-3 border border-info border-opacity-75 border-3" placeholder="Enter your task here" autocomplete="off">
+                <button onclick="addTask()" class="btn btn-info">Add Task</button>
+                <button onclick="allClear()" class="btn btn-warning ms-3">All Clear</button>
+            </div>
         </div>
         <div id="noTask" class="text-danger fw-bolder text-center"></div>
 
         <h3 class="text-center mt-5 text-info">My Task List</h3>
 
         <div class="d-flex justify-content-center">
-            <table class="table table-success table-borderless w-75">
+            <table class="table  table-striped table-hover table-borderless w-50">
                 <tbody id="tableBody" >
                     
                 </tbody>
